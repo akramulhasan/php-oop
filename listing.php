@@ -40,6 +40,14 @@ $listings = [
         'location' => 'New York',
         'tags' => []
     ],
+    [
+        'id' => 6,
+        'title' => 'Customer Support Manager',
+        'description' => 'We are looking for a friendly customer service representative to assist customers and resolve issues.',
+        'salary' => 50000,
+        'location' => 'New York',
+        'tags' => []
+    ],
 ];
 
 //Function to filter location
