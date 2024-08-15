@@ -81,7 +81,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit'])) {
                 </div>
             </form>
 
-            <!-- Display submitted data -->
+            <!-- Display submitted data based on condition -->
             <?php if ($submitted) : ?>
                 <div class="mt-6 p-4 border rounded bg-gray-200">
                     <h2 class="text-lg font-semibold">Submitted Listing:</h2>
