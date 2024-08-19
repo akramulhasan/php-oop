@@ -1,5 +1,6 @@
 <?php
 
+// receive the data and store
 $title = '';
 $description = '';
 $submitted = false;
