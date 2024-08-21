@@ -11,7 +11,7 @@ setcookie('username', 'ak8048', time() + 3600, '/');
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Coolie Learning</title>
+    <title>Coolie Learning Page</title>
 </head>
 
 <body>
