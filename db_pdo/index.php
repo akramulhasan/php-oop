@@ -9,7 +9,7 @@ $stmt = $pdo->prepare('SELECT * FROM posts');
 $stmt->execute();
 
 // Fetch Result
-$result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+$result = $stmt->fetchAll();
 
 echo '<pre>';
 var_dump($result);
