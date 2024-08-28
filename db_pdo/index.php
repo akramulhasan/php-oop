@@ -1,24 +1,56 @@
 <?php
 
-$host = 'localhost';
-$port = 3306;
-$dbName = 'blog';
-$username = 'root';
-$password = 'root';
+require 'database.php';
 
-$dsn = "mysql:host={$host};port={$port};dbname={$dbName};charset=utf8";
+// Prepare SELECT statement
+$stmt = $pdo->prepare('SELECT * FROM posts');
 
-try {
+// Execute the statement
+$stmt->execute();
 
-    // Create PDO instance
-    $pdo = new PDO($dsn, $username, $password);
+// Fetch Result
+$result = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-    // Set PDO to throw exception on error
-    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+echo '<pre>';
+var_dump($result);
+echo '</pre>';
 
-    echo 'Database Connected!';
-} catch (PDOException $e) {
+?>
 
-    // If there is an error, catch it here
-    echo 'Connection Failed: ' . $e->getMessage();
-}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Blog</title>
+</head>
+
+<body class="bg-gray-100">
+    <header class="bg-blue-500 text-white p-4">
+        <div class="container mx-auto">
+            <h1 class="text-3xl font-semibold">My Blog</h1>
+        </div>
+    </header>
+    <div class="container mx-auto p-4 mt-4">
+        <div class="md my-4">
+            <div class="rounded-lg shadow-md">
+                <div class="p-4">
+                    <h2 class="text-xl font-semibold">Post One</h2>
+                    <p class="text-gray-700 text-lg mt-2">This is post one</p>
+                </div>
+            </div>
+        </div>
+        <div class="md my-4">
+            <div class="rounded-lg shadow-md">
+                <div class="p-4">
+                    <h2 class="text-xl font-semibold">Post Two</h2>
+                    <p class="text-gray-700 text-lg mt-2">This is post two</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
